@@ -1,4 +1,6 @@
 var list
+var books = []
+var tableBody = document.getElementsByTagName('tbody')[0]
 
 //запрос на получение json
 var request = new XMLHttpRequest()
@@ -9,14 +11,34 @@ request.send()
 
 request.onload = function() {
 	var list = request.response
-	var books = []
 
 	window.list = list;
 	console.log(list)
 
 	for (i in list) {
 		a = document.createElement('tr')
-		nam = document.createElement('td')
-		nam.appendChild()
+
+		title = document.createElement('td')
+		title.innerText = list[i].title
+
+		author = document.createElement('td')
+		author.innerText = list[i].author
+
+		year = document.createElement('td')
+		year.innerText = list[i].year
+
+		pages = document.createElement('td')
+		pages.innerText = list[i].pages
+
+		a.appendChild(title)
+		a.appendChild(author)
+		a.appendChild(year)
+		a.appendChild(pages)
+
+		books.push(a)
 	}
+
+	books.forEach(book => {
+		tableBody.appendChild(book)
+	})
 }
