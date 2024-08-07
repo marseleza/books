@@ -1,3 +1,5 @@
+var list
+
 //запрос на получение json
 var request = new XMLHttpRequest()
 
@@ -7,5 +9,14 @@ request.send()
 
 request.onload = function() {
 	var list = request.response
+	var books = []
+
+	window.list = list;
 	console.log(list)
+
+	for (i in list) {
+		a = document.createElement('tr')
+		nam = document.createElement('td')
+		nam.appendChild()
+	}
 }
