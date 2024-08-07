@@ -7,5 +7,5 @@ request.responseType = "json"
 request.send()
 
 request.onload = function() {
-	books = request.response
+	var books = request.response
 }
