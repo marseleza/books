@@ -50,8 +50,8 @@ request.onload = function() {
 };
 
 function search() {
-	text = input.value
-	console.log(text)
+	text = input.value.toLowerCase()
+	re = new RegExp(text, 'gi')
 	books.forEach(book => {
 		title = book.children[0].children[0]
 		i = title.innerText.toLowerCase().indexOf(text)
@@ -61,7 +61,8 @@ function search() {
 		else {
 			if (book.classList.contains('hidden'))
 				book.classList.remove('hidden')
-			title.innerHTML = title.innerText.replace(text, "<mark>$&</mark>")
+			title.innerHTML = title.innerText.replace(re, "<mark>$&</mark>")
 		}
 	})
+	delete re
 }
