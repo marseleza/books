@@ -19,7 +19,10 @@ request.onload = function() {
 		a = document.createElement('tr')
 
 		title = document.createElement('td')
-		title.innerText = list[i].title
+		link = document.createElement('a')
+		link.innerText = list[i].title
+		link.href = 'files/' + list[i].href
+		title.appendChild(link)
 
 		author = document.createElement('td')
 		author.innerText = list[i].author
