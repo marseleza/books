@@ -11,13 +11,13 @@
 		<h1>Библиотека мехмата КФУ</h1>
 		<blockquote>Математика — это язык, на котором написана книга Природы<br/>Галилео Галилей</blockquote>
 	</header>
-	<input placeholder="введите название или автора..." oninput="search(this.value)"/>
+	<input placeholder="введите название или автора..." oninput="search()"/>
 	<br/>
-	<input type="radio" id="all" name="class" checked/>
+	<input type="radio" id="all" name="class" onchange="check()" checked/>
 	<label for="all">все</label>
-	<input type="radio" id="math" name="class"/>
+	<input type="radio" id="math" name="class" onchange="check()"/>
 	<label for="math">математика</label>
-	<input type="radio" id="it" name="class"/>
+	<input type="radio" id="it" name="class" onchange="check()"/>
 	<label for="it">информатика</label>
 	<table>
 		<thead>

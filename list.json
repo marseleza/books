@@ -25,21 +25,30 @@
 		"title": "Математический анализ I",
 		"author": "Зорич В.А.",
 		"year": 1981,
-		"pages": 400,
+		"pages": 564,
 		"class": "math"
 	},
 	"4": {
 		"title": "Математический анализ II",
 		"author": "Зорич В.А.",
 		"year": 1981,
-		"pages": 400,
+		"pages": 675,
 		"class": "math"
 	},
 	"5": {
+		"title": "Сборник задач и упражнений по математическому анализу",
+		"author": "Демидович Б.П.",
+		"year": 1961,
+		"pages": 625,
+		"class": "math",
+		"link": "Demidovich.pdf"
+	},
+	"6": {
 		"title": "Язык программирования C",
 		"author": "Керниган Б., Ритчи Д.",
-		"year": 1980,
-		"pages": 200,
-		"class": "it"
+		"year": 1978,
+		"pages": 343,
+		"class": "it",
+		"link": "C.pdf"
 	}
 }

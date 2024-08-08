@@ -1,5 +1,6 @@
 var list
 var books = []
+var type = "math it"
 var input = document.getElementsByTagName('input')[0]
 var tableBody = document.getElementsByTagName('tbody')[0]
 
@@ -20,6 +21,7 @@ request.onload = function() {
 
 	for (i in list) {
 		a = document.createElement('tr')
+		a.classList.add(list[i].class)
 
 		title = document.createElement('td')
 		link = document.createElement('a')
@@ -56,9 +58,11 @@ function search() {
 	books.forEach(book => {
 		show = false;
 		[book.children[0].children[0], book.children[1], book.children[2], book.children[3]].forEach(title => {
-			i = title.innerText.toLowerCase().indexOf(text)
-			if (i == -1)
+			if (title.innerText.toLowerCase().indexOf(text) == -1)
 				title.innerHTML = title.innerText
+			else if (type.indexOf(book.classList[0]) == -1) {
+
+			}
 			else {
 				show = true
 				title.innerHTML = title.innerText.replace(re, "<mark>$&</mark>")
@@ -72,4 +76,16 @@ function search() {
 			book.classList.add('hidden')
 	})
 	delete re
+}
+
+function check() {
+	radio = document.getElementsByName('class')
+
+	if (radio[0].checked)
+		type = "math it"
+	else if (radio[1].checked)
+		type = "math"
+	else
+		type = "it"
+	search()
 }
