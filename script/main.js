@@ -52,17 +52,24 @@ request.onload = function() {
 function search() {
 	text = input.value.toLowerCase()
 	re = new RegExp(text, 'gi')
+
 	books.forEach(book => {
-		title = book.children[0].children[0]
-		i = title.innerText.toLowerCase().indexOf(text)
-		if (i == -1) {
-			book.classList.add("hidden")
-		}
-		else {
-			if (book.classList.contains('hidden'))
+		show = false;
+		[book.children[0].children[0], book.children[1], book.children[2], book.children[3]].forEach(title => {
+			i = title.innerText.toLowerCase().indexOf(text)
+			if (i == -1)
+				title.innerHTML = title.innerText
+			else {
+				show = true
+				title.innerHTML = title.innerText.replace(re, "<mark>$&</mark>")
+			}
+		})
+		if (show) {
+			if(book.classList.contains('hidden'))
 				book.classList.remove('hidden')
-			title.innerHTML = title.innerText.replace(re, "<mark>$&</mark>")
 		}
+		else
+			book.classList.add('hidden')
 	})
 	delete re
 }
